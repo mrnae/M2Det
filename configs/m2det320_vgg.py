@@ -25,7 +25,7 @@ model = dict(
     )
 
 train_cfg = dict(
-    cuda = True,
+    cuda = False,#True,
     warmup = 5,
     per_batch_size = 16,
     lr = [0.004, 0.002, 0.0004, 0.00004, 0.000004],
@@ -40,7 +40,7 @@ train_cfg = dict(
     )
 
 test_cfg = dict(
-    cuda = True,
+    cuda = False,#True,
     topk = 0,
     iou = 0.45,
     soft_nms = True,

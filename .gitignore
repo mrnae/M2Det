@@ -29,3 +29,5 @@ venv.bak/
 .spyderproject
 .spyproject
 
+# weights
+weights/*

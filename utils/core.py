@@ -34,12 +34,13 @@ def anchors(cfg):
                                cfg.model.anchor_config.size_pattern, 
                                cfg.model.anchor_config.step_pattern)
     
-def init_net(net, cfg, resume_net):    
+def init_net(net, cfg, resume_net):
     if cfg.model.init_net and not resume_net:
         net.init_model(cfg.model.pretrained)
     else:
         print('Loading resume network...')
-        state_dict = torch.load(resume_net)
+        state_dict = torch.load(resume_net, map_location='cpu')
+#        state_dict = torch.load(resume_net)
 
         from collections import OrderedDict
         new_state_dict = OrderedDict()
